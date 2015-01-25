@@ -1,0 +1,18 @@
+   The sinking of the Titanic is one of the most infamous shipwrecks in history. On April 15, 1912, during her maiden voyage, 
+   the Titanic sank after colliding with an iceberg, killing 1502 out of 2224 passengers and crew. 
+   One of the reasons that the shipwreck led to such loss of life was that there were not enough 
+   lifeboats for the passengers and crew. Although there was some element of luck involved in surviving 
+   the sinking, some groups of people were more likely to survive than others, such as women, 
+   children, and the upper-class. -- Kaggle
+
+  The data set used in the application is 'ptitanic' from 'rpart.plot' package in R. 
+  The description of the data set can be found at: http://artax.karlin.mff.cuni.cz/r-help/library/rpart.plot/html/ptitanic.html. 
+  Variables included are passenger class, died or survived, gender, age, number of siblings or spouses aboard,
+  number of parents or children aboard. Data transformation were done on some of the variables to simplify the application.
+     
+  In this Shiny application, you can view the distribution of passengers who survied the tragedy with certain characteristics ('Distribution - Table' tab) 
+  and visualize the resutls ('Distribution - Plot' tab), 
+  as well as caculate the survival rate of a group of passengers ('Survival Rate' tab). 
+  The application can give you a general idea of what sorts of passengers were likely to survive.
+     
+  Please install R packages of 'ggplot2' and 'plyr' before running this application.
