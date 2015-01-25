@@ -48,7 +48,7 @@ shinyServer(function(input, output) {
     
     data0 = data[(!is.na(data$age))&(data$pclass==input$class)&(data$sex==input$sex)&(data$agegrp==input$agegrp)
                   &(data$sibspyn==input$sibspyn)&(data$parchyn==input$parchyn),]
-    print(sum(data0$survived=="survived"))
+
     survival_rate = list(0,0)
     if(dim(data0)[1]!=0){
       survival_rate[[1]] = dim(data0)[1]
