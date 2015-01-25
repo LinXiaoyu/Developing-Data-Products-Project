@@ -48,7 +48,6 @@ shinyServer(function(input, output) {
     
     data0 = data[(!is.na(data$age))&(data$pclass==input$class)&(data$sex==input$sex)&(data$agegrp==input$agegrp)
                   &(data$sibspyn==input$sibspyn)&(data$parchyn==input$parchyn),]
-
     survival_rate = list(0,0)
     if(dim(data0)[1]!=0){
       survival_rate[[1]] = dim(data0)[1]
@@ -103,7 +102,7 @@ shinyServer(function(input, output) {
                                               ifelse(ch=="parchyn","Aboard with Parents/Children")))))
     if(dist=="num"){
       
-      p = ggplot(table_plot, aes(x=table_plot[,1], y=Freq, fill=survived),,environment=environment()) +
+      p = ggplot(table_plot, aes(x=table_plot[,1], y=Freq, fill=survived,ymax=max(table_plot$Freq)),environment=environment()) +
         geom_bar(stat="identity",position="dodge") +
         scale_fill_brewer(palette="Pastel1") +
         geom_text(aes(label=Freq),vjust=1.5,
@@ -115,7 +114,7 @@ shinyServer(function(input, output) {
     }
     
     if(dist=="rate"){
-      p = ggplot(table_plot, aes(x=table_plot[,1], y=survival_rate, fill=survived),,environment=environment()) +
+      p = ggplot(table_plot, aes(x=table_plot[,1], y=survival_rate, fill=survived,ymax=max(table_plot$survival_rate)),environment=environment()) +
         geom_bar(stat="identity",position="dodge") +
         scale_fill_brewer(palette="Pastel1") +
         geom_text(aes(label=survival_rate),vjust=1.5,
